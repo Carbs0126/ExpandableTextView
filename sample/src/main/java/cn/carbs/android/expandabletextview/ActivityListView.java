@@ -48,7 +48,7 @@ public class ActivityListView extends AppCompatActivity implements View.OnClickL
             public void run() {
                 inflateListViews();
             }
-        }, 100);
+        }, 0);
     }
 
     @Override
