@@ -44,7 +44,7 @@ an ExpandableTextView on Android platform which can shrink TextView height if it
 
 ##添加依赖
 ```groovy
-compile 'cn.carbs.android:AvatarImageView:1.0.2'
+compile 'cn.carbs.android:ExpandableTextView:1.0.0'
 ```
 
 ##使用方法：
