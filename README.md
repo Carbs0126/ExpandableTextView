@@ -65,6 +65,13 @@ etv.updateForRecyclerView(text, etvWidth, state);//etvWidth为控件的真实宽
                 android:text="@string/long_poem" />
 ```
 
+##实现原理：
+1. 控件继承自`TextView`，`TextView`中的`setText(CharSequence text)`方法为 `final` 类型，且其内部最终调用了`setText(CharSequence text, BufferType type)`，因此`ExpandableTextView` Override了`setText(CharSequence text, BufferType type)`方法，且`TextView`在通过xml布局文件设置text时，同样最终是通过`setText(CharSequence text, BufferType type)`进行赋值，因此通过Override此方法达到自定义显示text的效果；
+2. 采用android.text.Layout类来确定在一定宽度下，特定的文本所达到的行数，如果超过最大行数，则添加收缩/展开效果；
+3. 为文本特定位置添加ClickableSpan，以此添加点击部分文本的响应效果；自定义`ClickableSpan`和`LinkMovementMethod`，达到添加点击`ClickableSpan`文字背景颜色改变的效果，感谢stackoverflow的解答；
+4. 通过`Paint.measureText(String text)`方法，找到文本截取的最优位置，使得在行尾添加了ClickableSpan后，不会出现因文字宽度不同而导致的文本换行或者文本末尾空余过大的现象；
+
+
 ##感谢
 ####[ReadMoreTextView][3]
 ---------------------
