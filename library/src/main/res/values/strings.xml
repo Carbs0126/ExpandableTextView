@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">library</string>
+    <string name="title_activity_main">ExpandableTextView</string>
+    <string name="title_activity_listview">ExpandableTextView in ListView</string>
+    <string name="to_expand_hint">Expand</string>
+    <string name="to_shrink_hint">Shrink</string>
+</resources>
