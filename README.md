@@ -17,11 +17,11 @@ an ExpandableTextView on Android platform which can shrink TextView height if it
 
 
 ##主要功能：
-1. 限制行数，行尾添加ClickSpan，点击可以"展开"/"收起"两种状态切换；
-2. 可使用在ListView/RecyclerView中，效率较高；
-3. 可在任意时刻更新ExpandableTextView内容（布局显示之前或者显示之后）；
+1. 限制行数，行尾添加`ClickSpan`，点击可以"展开"/"收起"两种状态切换；
+2. 可使用在`ListView`/`RecyclerView`中，效率较高；
+3. 可在任意时刻更新`ExpandableTextView`内容（布局显示之前或者显示之后）；
 4. 可自定义行数限制，默认最多显示2行；
-5. 可自定义行尾ClickSpan是否显示，颜色，文字，按下的背景颜色；
+5. 可自定义行尾`ClickSpan`是否显示，颜色，文字，按下的背景颜色；
 6. 可添加点击此view后是否在"展开"/"收起"状态间切换；
 7. 文字不足最大限制行数时，不截断文字，不显示末尾的"展开"/"收起"的指示标识；
 8. 可自定义行尾省略语与行尾"展开"/"收起"的指示标识之间的gap文字；
@@ -35,7 +35,7 @@ an ExpandableTextView on Android platform which can shrink TextView height if it
 1. 解决末尾显示的指示标识文字与原来文字宽度不一致时的显示问题（如原始文字与行尾指示标识文字为不同语言）。如当结尾指示标识文字较宽时，可能会显示到下一行。以此优化UI体验。
 2. 解决末尾单词过长或者跟随标点后，换行留下的空白问题。此问题源于TextView自带的一个属性：当结尾为完整单词或者跟随标点时会连同之前的部分文字一起换行。
 3. 解决文字过短时，截取文字超出边界的问题。
-4. 解决任何时刻为ExpandableTextView更新文字的问题。
+4. 解决任何时刻为`ExpandableTextView`更新文字的问题。
 
 ##不具有的功能：
 1. 限制字符长度。此控件只限制最大行数，不限制字符长度；
