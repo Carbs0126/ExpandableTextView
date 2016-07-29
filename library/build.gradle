@@ -6,7 +6,7 @@ android {
     buildToolsVersion "24.0.0"
 
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 8
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
@@ -39,7 +39,7 @@ publish {
     userOrg = 'carbs'
     groupId = 'cn.carbs.android'
     artifactId = 'ExpandableTextView'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     desc = 'an ExpandableTextView on Android platform which can shrink TextView height if its line count is greater than a certain number, it also can toggle state between expand and shrink'
     website = 'https://github.com/Carbs0126/ExpandableTextView'
 }
