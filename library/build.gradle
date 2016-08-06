@@ -39,7 +39,7 @@ publish {
     userOrg = 'carbs'
     groupId = 'cn.carbs.android'
     artifactId = 'ExpandableTextView'
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     desc = 'an ExpandableTextView on Android platform which can shrink TextView height if its line count is greater than a certain number, it also can toggle state between expand and shrink'
     website = 'https://github.com/Carbs0126/ExpandableTextView'
 }
