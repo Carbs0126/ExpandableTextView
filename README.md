@@ -64,6 +64,28 @@ etv.updateForRecyclerView(text, etvWidth, state);//etvWidth为控件的真实宽
                 android:layout_height="wrap_content"
                 android:text="@string/long_poem" />
 ```
+(3)可配置的属性有如下几项
+```xml
+<declare-styleable name="ExpandableTextView">
+        <attr name="etv_MaxLinesOnShrink" format="reference|integer" />
+        <attr name="etv_EllipsisHint" format="reference|string" /><!--default is ..-->
+        <attr name="etv_ToExpandHint" format="reference|string" /><!--"to expand" hint string, default is "Expand"-->
+        <attr name="etv_ToShrinkHint" format="reference|string" /><!--"to shrink" hint string, default is "Shrink"-->
+        <attr name="etv_GapToExpandHint" format="reference|string" /><!--gap between "toExpandHint" and "trimmed text"-->
+        <attr name="etv_GapToShrinkHint" format="reference|string" /><!--gap between "toShrinkHint" and "trimmed text"-->
+        <attr name="etv_EnableToggle" format="reference|boolean" /><!--if toggle the state when click ExpandTextView-->
+        <attr name="etv_ToExpandHintShow" format="reference|boolean" /><!--if show "toExpandHint"-->
+        <attr name="etv_ToShrinkHintShow" format="reference|boolean" /><!--if show "toShrinkHint"-->
+        <attr name="etv_ToExpandHintColor" format="reference|color" /><!--text color of "toExpandHint"-->
+        <attr name="etv_ToShrinkHintColor" format="reference|color" /><!--text color of "toShrinkHint"-->
+        <attr name="etv_ToExpandHintColorBgPressed" format="reference|color" /><!--background color if "toExpandHint" pressed-->
+        <attr name="etv_ToShrinkHintColorBgPressed" format="reference|color" /><!--background color if "toShrinkHint" pressed-->
+        <attr name="etv_InitState" format="enum"><!--init state, default is shrink-->
+            <enum name="shrink" value="0"/>
+            <enum name="expand" value="1"/>
+        </attr>
+    </declare-styleable>
+```
 
 ## 实现原理：
 1. 控件继承自`TextView`，`TextView`中的`setText(CharSequence text)`方法为 `final` 类型，且其内部最终调用了`setText(CharSequence text, BufferType type)`，因此`ExpandableTextView` Override了`setText(CharSequence text, BufferType type)`方法，且`TextView`在通过xml布局文件设置text时，同样最终是通过`setText(CharSequence text, BufferType type)`进行赋值，因此通过Override此方法达到自定义显示text的效果；
