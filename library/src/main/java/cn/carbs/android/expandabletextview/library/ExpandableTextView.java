@@ -293,7 +293,7 @@ public class ExpandableTextView extends TextView{
                     indexEndTrimmedRevised += extraOffset;
                 }
 
-                String fixText = removeEndLineBreak(mOrigText.subSequence(0, indexEndTrimmedRevised));
+                CharSequence fixText = removeEndLineBreak(mOrigText.subSequence(0, indexEndTrimmedRevised));
                 SpannableStringBuilder ssbShrink = new SpannableStringBuilder(fixText)
                         .append(mEllipsisHint);
                 if (mShowToExpandHint) {
@@ -322,12 +322,11 @@ public class ExpandableTextView extends TextView{
         return mOrigText;
     }
 
-    private String removeEndLineBreak(CharSequence text) {
-        String str = text.toString();
-        while (str.endsWith("\n")) {
-            str = str.substring(0, str.length() - 1);
+    private CharSequence removeEndLineBreak(CharSequence text) {
+        while (text.toString().endsWith("\n")) {
+            text = text.subSequence(0, text.length() - 1);
         }
-        return str;
+        return text;
     }
 
     public void setExpandListener(OnExpandListener listener){
